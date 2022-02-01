@@ -5,9 +5,23 @@ public class User {
 	private Account account;
 	private Card card;
 	
+	public User() {}
+	
 	public User(String name, Account account, Card card) {
 		this.name = name;
 		this.account = account;
+		this.card = card;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+	
+	public void setCard(Card card) {
 		this.card = card;
 	}
 	

@@ -8,9 +8,15 @@ public class State {
 	private String name;
 	private ArrayList<Transition> possibleTransitionStates;
 	
+	public State() {}
+	
 	public State(String name) {
 		this.name = name;
 		this.possibleTransitionStates = new ArrayList<>();
+	}
+	
+	public void setStateName(String name) {
+		this.name = name;
 	}
 	
 	public void insertTransition(Transition transition) {
@@ -19,7 +25,7 @@ public class State {
 	
 	public State findNextState(Input providedInput) {
 		for (Transition transition: possibleTransitionStates) {
-			if (transition.getRequiredInput() == providedInput) {
+			if (transition.getRequiredInput().equals(providedInput)) {
 				return transition.getNextState();
 			}
 		}
@@ -42,5 +48,14 @@ public class State {
 		
 		State comparableState = (State) object;
 		return compareThisStateTo(comparableState);
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		for (Transition t: possibleTransitionStates) {
+			sb.append("\t" + t.toString() + "\n");
+		}
+		return "State: " + name + "\n" + sb.toString();
 	}
 }

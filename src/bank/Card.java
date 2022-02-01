@@ -4,8 +4,18 @@ public class Card {
 	private String cardNr;
 	private String cardPIN;
 	
+	public Card() {}
+	
 	public Card(String cardNr, String cardPIN) {
 		this.cardNr = cardNr;
+		this.cardPIN = cardPIN;
+	}
+	
+	public void setCardNr(String cardNr) {
+		this.cardNr = cardNr;
+	}
+	
+	public void setCardPIN(String cardPIN) {
 		this.cardPIN = cardPIN;
 	}
 	

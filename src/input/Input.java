@@ -23,4 +23,9 @@ public class Input {
 		Input comparableInput = (Input) object;
 		return compareThisInputTo(comparableInput);
 	}
+	
+	@Override
+	public String toString() {
+		return name;
+	}
 }

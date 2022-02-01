@@ -39,4 +39,9 @@ public class Transition {
 		Transition comparableTransition = (Transition) object;
 		return compareThisTransitionTo(comparableTransition);
 	}
+	
+	@Override
+	public String toString() {
+		return " -- " + requiredInput + " --> " + nextState;
+	}
 }

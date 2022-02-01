@@ -6,11 +6,27 @@ public class Account {
 	private String accountPIN;
 	private double balance;
 	
+	public Account() {
+		this.balance = 0.0;
+	}
+	
 	public Account(String accountHolder, String accountNr, String accountPIN) {
 		this.accountHolder = accountHolder;
 		this.accountNr = accountNr;
 		this.accountPIN = accountPIN;
 		this.balance = 0.0;
+	}
+	
+	public void setAccountHolder(String newAccountHolder) {
+		accountHolder = newAccountHolder;
+	}
+	
+	public void setAccountNr(String newAccountNr) {
+		accountNr = newAccountNr;
+	}
+	
+	public void setAccountPIN(String newAccountPIN) {
+		accountPIN = newAccountPIN;
 	}
 	
 	public void setAccountBalance(double newBalance) {
@@ -64,5 +80,10 @@ public class Account {
 		
 		Account comparableAccount = (Account) object;
 		return compareThisAccountTo(comparableAccount);
+	}
+	
+	@Override
+	public String toString() {
+		return accountHolder + ", " + accountNr + ", " + accountPIN;
 	}
 }
